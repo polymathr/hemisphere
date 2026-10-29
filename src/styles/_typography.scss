@@ -1,0 +1,60 @@
+/* Hemisphere Typography System */
+
+h1, h2, h3, h4, h5, h6, .font-serif {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: -0.015em;
+  color: var(--color-ink);
+}
+
+.font-sans {
+  font-family: var(--font-sans);
+}
+
+.text-display {
+  font-size: 2.25rem;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+}
+
+.text-title {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.text-subtitle {
+  font-size: 1.125rem;
+  font-weight: 400;
+  color: var(--color-ink-muted);
+}
+
+.text-body {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+}
+
+.text-caption {
+  font-size: 0.8125rem;
+  color: var(--color-ink-muted);
+}
+
+.text-micro {
+  font-size: 0.6875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+  color: var(--color-ink-faint);
+}
+
+/* Notebook ruled line effect */
+.ruled-line {
+  border-bottom: 1px solid var(--color-border-subtle);
+}
+
+.paper-spread {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-paper);
+}

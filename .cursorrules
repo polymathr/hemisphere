@@ -1,0 +1,17 @@
+# Hemisphere UI/UX & Code Rules
+
+1. DESIGN PHILOSOPHY:
+- No Tailwind CSS. Use semantic HTML and scoped Svelte SCSS.
+- Never use #000000 or #FFFFFF. Stick to the Alabaster/Espresso palette.
+- UI elements must have rounded corners (radii mimicking physical paper notebooks, e.g., 8px to 12px) and soft, diffuse shadows, never harsh dropshadows.
+
+2. ANIMATION (GSAP):
+- Use `gsap.to()` with `ease: "elastic.out(1, 0.5)"` or `power3.out` for UI transitions. 
+- State changes (like checking a box) must include haptic-like visual feedback (e.g., a slight scale down on click, bouncing back on release).
+
+3. SVELTEKIT ARCHITECTURE:
+- Keep components small. The left and right panels must be separate components passing state via Svelte stores or Svelte 5 runes.
+- Use Supabase Realtime to ensure that if a user has the app open on their phone and desktop, moving a task on desktop instantly visually moves it on the phone.
+
+4. BEHAVIORAL CONSTRAINT:
+- If a user asks for a new feature that violates the "KISS" (Keep It Simple, Stupid) principle, warn them. Act as a guardian of simplicity.

@@ -1,0 +1,64 @@
+@use 'variables' as *;
+@use 'reset';
+@use 'typography';
+
+/* App Shell Base Layout */
+#app-root {
+  height: 100vh;
+  width: 100vw;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-bg);
+  color: var(--color-ink);
+  position: relative;
+  overflow: hidden;
+  transition: background-color 0.4s cubic-bezier(0.16, 1, 0.3, 1), color 0.3s ease;
+}
+
+/* Fluid Plasma Theme Background */
+[data-theme="plasma"] #app-root {
+  background: linear-gradient(
+    -45deg,
+    #F3E9DD,
+    #E1EDE2,
+    #F5E1D3,
+    #E8E0D5,
+    #DCE8DA,
+    #F0D8CB
+  );
+  background-size: 400% 400%;
+  animation: plasmaFlow 22s ease-in-out infinite alternate;
+}
+
+@keyframes plasmaFlow {
+  0% {
+    background-position: 0% 25%;
+  }
+  25% {
+    background-position: 50% 75%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  75% {
+    background-position: 40% 100%;
+  }
+  100% {
+    background-position: 0% 25%;
+  }
+}
+
+/* Smooth color transitions for paper surfaces when switching themes */
+.spread-pane,
+.topbar,
+.paper-sheet,
+.day-planner-container,
+.notion-notebook-container,
+.day-card,
+.priority-card {
+  transition: background-color 0.35s cubic-bezier(0.16, 1, 0.3, 1), 
+              border-color 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              color 0.3s ease;
+}

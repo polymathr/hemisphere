@@ -1,0 +1,124 @@
+// Hemisphere Design Tokens & Theme Variables
+
+:root {
+  /* Core Biophilic Palette */
+  --color-bg: #F7F5F0;             /* Warm Oat / Alabaster */
+  --color-surface: #FAF8F5;        /* Premium paper spread */
+  --color-surface-elevated: #FFFDFB;/* Card / lifted element */
+  --color-ink: #2C2A29;            /* Deep Slate / Espresso */
+  --color-ink-muted: #66625F;      /* Muted graphite */
+  --color-ink-faint: #A39E99;      /* Faint pencil guideline */
+  --color-border: #E6E1D8;         /* Subtle paper edge */
+  --color-border-subtle: #EFEBE4;  /* Ruled line */
+
+  /* Accents */
+  --color-accent-sage: #8BA888;    /* Muted Sage Green */
+  --color-accent-sage-tint: #EDF3ED; /* Sage wash */
+  --color-accent-sage-dark: #6C8B69; /* Deep Sage */
+
+  --color-accent-terracotta: #C27D65; /* Terracotta (Urgency / Today) */
+  --color-accent-terracotta-tint: #F9EFEA; /* Terracotta wash */
+  --color-accent-terracotta-dark: #A9624A;
+
+  /* Typography */
+  --font-serif: 'Fraunces', 'Newsreader', Georgia, serif;
+  --font-sans: 'Inter', 'Satoshi', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  /* Notebook Radii */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-xl: 20px;
+  --radius-pill: 9999px;
+
+  /* Paper Shadows - Soft & Diffuse */
+  --shadow-subtle: 0 1px 3px rgba(44, 42, 41, 0.04), 0 1px 2px rgba(44, 42, 41, 0.02);
+  --shadow-paper: 0 4px 16px -2px rgba(44, 42, 41, 0.05), 0 2px 6px -1px rgba(44, 42, 41, 0.03);
+  --shadow-lifted: 0 12px 28px -4px rgba(44, 42, 41, 0.08), 0 4px 10px -2px rgba(44, 42, 41, 0.04);
+  --shadow-floating: 0 20px 40px -8px rgba(44, 42, 41, 0.12), 0 6px 14px -3px rgba(44, 42, 41, 0.05);
+
+  /* Layout Constants */
+  --planner-width: 40%;
+  --notebook-width: 60%;
+  --header-height: 64px;
+
+  /* Spring Physics Easings */
+  --ease-spring: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  --ease-soft: cubic-bezier(0.16, 1, 0.3, 1);
+  --duration-fast: 160ms;
+  --duration-normal: 280ms;
+  --duration-slow: 420ms;
+}
+
+/* Deep Obsidian Dark Mode */
+[data-theme="dark"] {
+  --color-bg: #151413;
+  --color-surface: #201E1D;
+  --color-surface-elevated: #292725;
+  --color-ink: #EDE9E3;
+  --color-ink-muted: #A8A29B;
+  --color-ink-faint: #6B655E;
+  --color-border: #33302C;
+  --color-border-subtle: #2A2724;
+
+  --color-accent-sage: #98B894;
+  --color-accent-sage-tint: #1F2E20;
+  --color-accent-sage-dark: #B2D1AE;
+
+  --color-accent-terracotta: #D98971;
+  --color-accent-terracotta-tint: #38221B;
+  --color-accent-terracotta-dark: #EAA691;
+
+  --shadow-subtle: 0 1px 3px rgba(0, 0, 0, 0.25), 0 1px 2px rgba(0, 0, 0, 0.15);
+  --shadow-paper: 0 4px 16px -2px rgba(0, 0, 0, 0.35), 0 2px 6px -1px rgba(0, 0, 0, 0.2);
+  --shadow-lifted: 0 12px 28px -4px rgba(0, 0, 0, 0.45), 0 4px 10px -2px rgba(0, 0, 0, 0.25);
+  --shadow-floating: 0 20px 40px -8px rgba(0, 0, 0, 0.6), 0 6px 14px -3px rgba(0, 0, 0, 0.3);
+}
+
+/* Fluid Plasma Gradient Mode */
+[data-theme="plasma"] {
+  --color-bg: #EAE3D2;
+  --color-surface: rgba(253, 251, 247, 0.88);
+  --color-surface-elevated: rgba(255, 254, 252, 0.94);
+  --color-ink: #262322;
+  --color-ink-muted: #57524E;
+  --color-ink-faint: #8E8881;
+  --color-border: rgba(198, 188, 172, 0.45);
+  --color-border-subtle: rgba(215, 206, 192, 0.35);
+
+  --color-accent-sage: #6B8E68;
+  --color-accent-sage-tint: rgba(139, 168, 136, 0.22);
+  --color-accent-sage-dark: #51724E;
+
+  --color-accent-terracotta: #B96B50;
+  --color-accent-terracotta-tint: rgba(194, 125, 101, 0.22);
+  --color-accent-terracotta-dark: #964F38;
+
+  --shadow-paper: 0 8px 32px 0 rgba(160, 130, 110, 0.18), 0 2px 8px -1px rgba(0, 0, 0, 0.05);
+  --shadow-lifted: 0 16px 40px -4px rgba(160, 130, 110, 0.24);
+}
+
+// SCSS shortcuts referencing tokens
+$bg: var(--color-bg);
+$surface: var(--color-surface);
+$surface-elevated: var(--color-surface-elevated);
+$ink: var(--color-ink);
+$ink-muted: var(--color-ink-muted);
+$ink-faint: var(--color-ink-faint);
+$border: var(--color-border);
+$border-subtle: var(--color-border-subtle);
+
+$sage: var(--color-accent-sage);
+$sage-tint: var(--color-accent-sage-tint);
+$terracotta: var(--color-accent-terracotta);
+$terracotta-tint: var(--color-accent-terracotta-tint);
+
+$font-serif: var(--font-serif);
+$font-sans: var(--font-sans);
+
+$radius-sm: var(--radius-sm);
+$radius-md: var(--radius-md);
+$radius-lg: var(--radius-lg);
+
+$shadow-paper: var(--shadow-paper);
+$shadow-lifted: var(--shadow-lifted);
